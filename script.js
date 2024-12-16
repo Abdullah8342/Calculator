@@ -39,10 +39,6 @@ function Division(num_1,num_2) {
 
 // END DIVISION
 
-// ACCESSING INPUT 
-
-
-
 
 // END FUNCTION
 
@@ -54,16 +50,24 @@ btn.forEach((bt) => {
         }
         else if (bt.innerText == 'Enter') {
             if ((input_value.value).includes('+')) {
-                alert('+');
+                let number = input_value.value.split('+');
+                let result = Add(Number(number[0]),Number(number[1]));
+                input_value.value = result;
             }
             else if((input_value.value).includes('-')){
-                alert('-');
+                let number = input_value.value.split('-');
+                let result = Subtract(Number(number[0]),Number(number[1]));
+                input_value.value = result;
             }
             else if((input_value.value).includes('/')) {
-                alert('/');
+                let number = input_value.value.split('/');
+                let result = Division(Number(number[0]),Number(number[1]));
+                input_value.value = result;
             }
             else if((input_value.value).includes('x')) {
-                alert('x');
+                let number = input_value.value.split('x');
+                let result = Multiply(Number(number[0]),Number(number[1]));
+                input_value.value = result;
             }
         }
         else {
@@ -73,13 +77,3 @@ btn.forEach((bt) => {
 })
 
 
-
-
-// CONSOLE
-console.log(Add(5,5)); // OK
-console.log(Subtract(5,5)); // OK
-console.log(Multiply(5,5)); // OK
-console.log(Division(5,5)); // OK
-console.log(btn);
-console.log(input_value);
-// END CONSOLE
